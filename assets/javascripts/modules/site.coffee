@@ -84,6 +84,7 @@ site = Backbone.View.extend
       paragraphs = @model.hslaStr([hsla[0], 40, 70, 1])
       headingsAndCode = @model.hslaStr([hsla[0], 40, 70, 1])
       $('h1').css('text-shadow', @getTextShadow(hsla))
+      $('.subtitle').css('text-shadow', @getTextShadow(hsla))
       @style.text "body a:hover { color: #{linkHover} !important }
         h1 + p { color: #{paragraphs} }
         body h2, body h3, code { color: #{headingsAndCode} }"

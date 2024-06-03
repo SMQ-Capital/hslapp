@@ -1,5 +1,16 @@
 .DS_Store
-.sass-cache
 _site
-stylesheets
+
+# generated code
+css/
 javascripts/hslpicker.js
+
+# node
+node_modules/
+
+# sass
+.sass-cache/
+
+# parcel
+dist/
+.parcel-cache/

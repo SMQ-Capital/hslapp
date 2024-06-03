@@ -9,7 +9,7 @@ picker = Backbone.View.extend
       steps: 361
       speed: 100
       x: @model.get('h')/360
-      animationCallback: (x,y)=> 
+      animationCallback: (x,y)=>
         hue = Math.round(x*360)
         @model.h hue unless @model.get('h') is hue
 
@@ -21,7 +21,6 @@ picker = Backbone.View.extend
       animationCallback: (x,y)=>
         sat = Math.round(x*100)
         @model.s sat unless @model.get('s') is sat
-
 
     @lumSlider = @$('#l-slider').dragdealer
       slide: false
@@ -68,12 +67,12 @@ picker = Backbone.View.extend
     unless Math.round(slider.value.current[0]*factor) is Math.round(value)
       slider.setValue value/factor
 
-  updateSliderStyles: (part) ->
+  updateSliderStyles: (part)->
     parts = _.without(['h','s','l','a'], part)
-    (@setSliderBg p for p in parts)
+    @setSliderBg(parts[p]) for p of parts
 
-  setSliderBg: (part) ->
-    $("##{part}-slider").attr('style',"background: -webkit-#{@gradient part}; background: -moz-#{@gradient part}")
+  setSliderBg: (part)->
+    $("##{part}-slider").attr('style',"background: -webkit-#{@gradient part}; background: -moz-#{@gradient part};")
 
   gradient: (part)->
     switch part
@@ -88,7 +87,7 @@ picker = Backbone.View.extend
         multiplier = .2
 
     colors = (@model.hslaStr(@tweakHsla(part, num*multiplier)) for num in [0..size])
-    "linear-gradient(left, #{colors.join(',')});"
+    "linear-gradient(left, #{colors.join(',')})"
 
   tweakHsla: (part, value) ->
     color = @model.hsla()

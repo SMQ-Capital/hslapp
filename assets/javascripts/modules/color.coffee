@@ -260,7 +260,7 @@ color = Backbone.Model.extend
       q
     else if (h * 3) < 2
       p + (q - p) * ((2 / 3) - h) * 6
-    else 
+    else
       p
 
 module.exports = (options) -> new color(options)

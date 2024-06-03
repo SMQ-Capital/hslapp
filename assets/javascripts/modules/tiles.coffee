@@ -12,7 +12,7 @@ tiles = Backbone.View.extend
     'click .bg'                      : 'setTileBg'
 
   toggleExposed: ->
-    $('.color-tiles').toggleClass 'exposed' 
+    $('.color-tiles').toggleClass 'exposed'
     $('.slider').css 'background-color', if $('.color-tiles').is('.exposed') then 'transparent' else @model.hslaStr @model.get('background')
     $('.foreground').trigger 'click'
 
@@ -31,7 +31,7 @@ tiles = Backbone.View.extend
       color[3] = @model.get('a') or 1 #retain current alpha setting if > 0
       @model.hsla color
     else
-      @model.hsla tile.data('color') 
+      @model.hsla tile.data('color')
 
   updateForeground: ->
     $('.foreground-color').css 'background-color': @model.hslaStr @model.get('foreground')

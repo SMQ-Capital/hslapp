@@ -1,16 +1,21 @@
-@import "compass";
-@import "compass/layout";
 @import "picker";
 
-@include font-face("AdelleBasic", font-files("adellebasic_bold-webfont.ttf", "adellebasic_bold-webfont.svg", "adellebasic_bold-webfont.woff", "adellebasic_bold-webfont.eot"));
-@include font-face("CaviarDreams", font-files("caviardreams-webfont.ttf", "caviardreams-webfont.svg", "caviardreams-webfont.woff", "caviardreams-webfont.eot"));
+@font-face {
+  font-family: "AdelleBasic";
+  src: url("../fonts/adellebasic_bold-webfont.ttf") format("truetype"), url("../fonts/adellebasic_bold-webfont.svg") format("svg"), url("../fonts/adellebasic_bold-webfont.woff") format("woff"), url("../fonts/adellebasic_bold-webfont.eot") format("eot");
+}
 
-* { @include box-sizing(border-box) }
+@font-face {
+  font-family: "CaviarDreams";
+  src: url("../fonts/caviardreams-webfont.ttf") format("truetype"), url("../fonts/caviardreams-webfont.svg") format("svg"), url("../fonts/caviardreams-webfont.woff") format("woff"), url("../fonts/caviardreams-webfont.eot") format("eot");
+}
+
+* { box-sizing: border-box; }
 
 html { 
   text-align: center;
-  @include background-size(80px 80px);
-  @include background-image(linear-gradient(left top, rgba(#000, .1) 25%, rgba(#000, 0) 25%, rgba(#000, 0) 50%, rgba(#000, .1) 50%, rgba(#000, .1) 75%, rgba(#000, 0) 75%, rgba(#000, 0)));
+  background-size: 80px 80px;
+  background-image: linear-gradient(left top, rgba(#000, .1) 25%, rgba(#000, 0) 25%, rgba(#000, 0) 50%, rgba(#000, .1) 50%, rgba(#000, .1) 75%, rgba(#000, 0) 75%, rgba(#000, 0));
   background-color: #2a2a2a;
 }
 body {
@@ -21,7 +26,7 @@ body {
   > div, > section, > header {
     width: 570px;
     margin: 0 auto;
-    @include box-sizing(border-box);
+    box-sizing: border-box;
   }
 }
 
@@ -30,10 +35,10 @@ body {
   font-weight: normal;
 }
 .inset-box-shadow {
-  @include box-shadow(rgba(#fff, .1) 0 1px 0, rgba(#000, .8) 0 1px 7px 0px inset);
+  box-shadow: rgba(#fff, .1) 0 1px 0, rgba(#000, .8) 0 1px 7px 0px inset;
 }
 
-h1, h2, h3 {
+h1, h2, h3, .subtitle {
   @extend .heading-font;
   color: #eee;
   font-weight: normal;
@@ -56,6 +61,18 @@ h2 {
 h1 {
   text-align: center;
   font-size: 3.5em;
+  margin: 0em 0 .1em;
+  line-height: 1em;
+  @extend .heading-font;
+  text-transform: uppercase;
+  word-spacing: .05em;
+  font-weight: bold;
+  &:focus { outline: 0; }
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 2.5em;
   margin: 0em 0 .1em;
   line-height: 1em;
   @extend .heading-font;
@@ -106,7 +123,7 @@ header {
 }
 
 a {
-  @include transition(color .5s);
+  transition: color .5s;
   color: #eee;
   text-decoration: none;
   //border-bottom: 1px dotted;
@@ -123,6 +140,7 @@ p {
 
 .frame {
   margin-bottom: 1.5em;
+  display: flex;
 }
 
 code {
@@ -131,14 +149,14 @@ code {
   display: inline-block;
   background: rgba(#000, .3);
   padding: 0 .4em;
-  @include border-radius(4px);
+  border-radius: 4px;
 }
 pre {
   background: rgba(#000, .3);
   padding: 1em;
   margin: 0 0 1.8em;
   width: auto;
-  @include border-radius(4px);
+  border-radius: 4px;
   @extend .inset-box-shadow;
   code { background: none; }
 }
@@ -167,7 +185,7 @@ section {
   }
 
   margin-top: 2em;
-  @include border-radius(4px);
+  border-radius: 4px;
   @extend .inset-box-shadow;
   padding: 2em 2.5em .5em;
   background: rgba(#000, .2);
@@ -194,7 +212,7 @@ footer {
         display: block;
         position: absolute; left: -.7em; top: 0;
         border-left: 1px solid rgba(#000, .7);
-        @include box-shadow(rgba(#fff, .08) 1px 0 inset);
+        box-shadow: rgba(#fff, .08) 1px 0 inset;
         width: 1px; height: 1.3em;
       }
     }
@@ -211,12 +229,12 @@ footer {
   border: 0;
   width: 168px;
   color: #666;
-  @include border-radius(0px);
-  @include box-shadow(none);
+  border-radius: 0px;
+  box-shadow: none;
   background: none;
   &:focus, &:hover {
     background: rgba(#000, .05);
-    @include box-shadow(rgba(#000, .4) 0 1px 10px 0px inset);
+    box-shadow: rgba(#000, .4) 0 1px 10px 0px inset;
     color: #999;
   }
 }

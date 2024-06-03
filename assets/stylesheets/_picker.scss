@@ -5,11 +5,11 @@
 %checked {
   $tile1: rgba(#fff, .2);
   $tile2: transparent;
-  @include background-image(
+  background-image:
     linear-gradient(45deg, $tile1 25%, $tile2 25%, $tile2 75%, $tile1 75%, $tile1),
     linear-gradient(45deg, $tile1 25%, $tile2 25%, $tile2 75%, $tile1 75%, $tile1)
-  );
-  @include background-size(20px 20px);
+  ;
+  background-size: 20px 20px;
   background-position: 0px 0px, 10px 10px;
 }
 
@@ -20,11 +20,9 @@
   }
   &:after {
     background: rgba(#000, .3);
-    @include stretch(-3px, -4px, -3px, -4px);
-    @include box-shadow(rgba(#000, .3) 0 1px inset, rgba(#fff, .1) 0 1px);
+    box-shadow: rgba(#000, .3) 0 1px inset, rgba(#fff, .1) 0 1px;
   }
   &:before {
-    @include stretch;
     @extend %checked;
   }
 }
@@ -35,19 +33,19 @@
   margin: { bottom: 15px; right: 10px; top: 3px; }
   float: left;
   background-color: rgba(#fff, 0);
-  @include transition(background-color .1s);
-  @include border-radius(6px);
-  &:after { @include border-right-radius(8px); }
-  &:before { @include border-radius(5px); }
+  transition: background-color .1s;
+  border-radius: 6px;
+  &:after { border-top-right-radius: 8px; border-bottom-right-radius: 8px; }
+  &:before { border-radius: 5px; }
   @extend %color-boxes;
   .tile {
-    @include border-radius(5px);
+    border-radius: 5px;
   }
   div .tile {
-    @include stretch;
+    // @include stretch;
   }
   div .tile, .bg {
-    @include box-shadow(rgba(#fff, .1) 0 1px 2px 1px inset, rgba(#fff, .2) 0 1px inset, rgba(#000, .4) 0 -1px 1px inset, rgba(#000, .4) 0 1px 1px);
+    box-shadow: rgba(#fff, .1) 0 1px 2px 1px inset, rgba(#fff, .2) 0 1px inset, rgba(#000, .4) 0 -1px 1px inset, rgba(#000, .4) 0 1px 1px;
   }
 }
 
@@ -65,8 +63,8 @@
 }
 
 .expose {
-  @include transition(all .15s ease-out);
-  @include border-radius(2px);
+  transition: all .15s ease-out;
+  border-radius: 2px;
   position: absolute; top: 5px; right: 5px;
   width: 16px; height: 16px;
   z-index: 2;
@@ -129,33 +127,33 @@
   .background {
     right: 29px;
     width: 90px; height: 90px;
-    @include box-shadow(rgba(#000, .8) 0 1px 10px);
+    box-shadow: rgba(#000, .8) 0 1px 10px;
   }
   .foreground {
-    @include box-shadow(rgba(#000, .8) 0 1px 10px);
+    box-shadow: rgba(#000, .8) 0 1px 10px;
     cursor: pointer;
   }
   .selected {
     &:after {
       content: "";
-      @include stretch;
-      @include border-radius(5px);
+      // @include stretch;
+      border-radius: 5px;
       z-index: 1;
-      @include box-shadow(rgba(#fff, .5) 0 0 0px 1px inset, rgba(#000, .5) 0 0 0 5px inset);
+      box-shadow: rgba(#fff, .5) 0 0 0px 1px inset, rgba(#000, .5) 0 0 0 5px inset;
       cursor: pointer;
     }
   }
 }
 
 .background, .foreground {
-  @include transition(all .25s ease-in-out);
+  transition: all .25s ease-in-out;
 }
 
 .bgs {
   position: absolute;
   left: -34px; width: 30px;
   @extend %color-boxes;
-  &, &:before, &:after { @include border-left-radius(6px); }
+  &, &:before, &:after { border-left-radius: 6px; }
   &:after { right: 0px; }
   .exposed & div { left: 0; }
   div {
@@ -164,8 +162,8 @@
     position: relative;
     margin-top: 1px;
     cursor: pointer;
-    &:first-child { @include border-top-radius(5px); margin-top: 0; }
-    &:last-child { @include border-bottom-radius(5px); }
+    &:first-child { border-radius: 0 5px; margin-top: 0; }
+    &:last-child { border-bottom-radius: 5px; }
   }
   .none {
     background-color: hsla(360, 100, 100, 0); 
@@ -177,8 +175,8 @@
     &:after {
       content: ""; height: 6px; width: 6px;
       position: absolute; top: 0; left: 0;
-      @include border-radius(5px);
-      @include box-shadow(
+      border-radius: 5px;
+      box-shadow:
           rgba(#000, .8) 6px 5px
         , rgba(#fff, .4) 6px 6px 1px
         , rgba(#000, .8) 18px 5px
@@ -189,7 +187,7 @@
         , rgba(#fff, .4) 6px 20px 1px
         , rgba(#000, .8) 18px 19px
         , rgba(#fff, .4) 18px 20px 1px
-      );
+      ;
     }
   }
 }
@@ -197,11 +195,11 @@
 .slider {
   &, > div {
     width: 381px; height: 20px; 
-    @include box-shadow(rgba(#fff, .1) 0 1px 2px 1px inset, rgba(#fff, .2) 0 1px inset, rgba(#000, .4) 0 -1px 1px inset, rgba(#000, .4) 0 1px 1px, rgba(#000, 1) 0 0 2px 1px);
+    box-shadow: rgba(#fff, .1) 0 1px 2px 1px inset, rgba(#fff, .2) 0 1px inset, rgba(#000, .4) 0 -1px 1px inset, rgba(#000, .4) 0 1px 1px, rgba(#000, 1) 0 0 2px 1px;
   }
-  > div { @include border-radius(10px); }
-  @include border-radius(10px); 
-  @include transition(background-color .1s);
+  > div { border-radius: 10px; }
+  border-radius: 10px; 
+  transition: background-color .1s;
   position: relative;
   width: 381px;
   margin: 3px 5px 10px;
@@ -212,7 +210,7 @@
   clear: left;
   @extend %color-boxes;
   &:after, &:before {
-    @include border-radius(15px);
+    border-radius: 15px;
   }
   &:hover .handle {
     background-color: rgba(#fff, .1);
@@ -229,14 +227,14 @@
   height: 22px;
   z-index: 1;
   background-color: rgba(#ddd, 1);
-  @include transition(background-color .4s);
-  @include background-image(radial-gradient(top center, circle, rgba(#fff, .9), rgba(#fff, .2) 15px));
-  @include border-radius(1em);
-  @include box-shadow(rgba(#fff, 1) 0px 1px 1px inset, rgba(#000, 0.4) 0px -1px 1px inset, rgba(#000, 0.4) 0px 1px 4px 0px, rgba(#000, .6) 0 0 2px);
+  transition: background-color .4s;
+  background-image: radial-gradient(top center, circle, rgba(#fff, .9), rgba(#fff, .2) 15px);
+  border-radius: 1em;
+  box-shadow: rgba(#fff, 1) 0px 1px 1px inset, rgba(#000, 0.4) 0px -1px 1px inset, rgba(#000, 0.4) 0px 1px 4px 0px, rgba(#000, .6) 0 0 2px;
 }
 
 .sliders {
-  @include clearfix;
+  clear: both;
   input {
     width: 40px;
     text-align: right;
@@ -256,9 +254,9 @@
 }
 
 input {
-  @include transition(all .3s);
-  @include border-radius(4px);
-  @include box-shadow(rgba(#fff, .1) 0 1px 0, rgba(#000, .8) 0 1px 7px 0px inset);
+  transition: all .3s;
+  border-radius: 4px;
+  box-shadow: rgba(#fff, .1) 0 1px 0, rgba(#000, .8) 0 1px 7px 0px inset;
   border: 0;
   padding: 8px 6px;
   font-size: 1em;
@@ -273,7 +271,7 @@ input {
 #hsla { width: 15em; }
 
 input.error {
-  @include box-shadow(rgba(mix(#fff, red), .1) 0 1px 0, rgba(#000, .8) 0 1px 7px 0px inset);
+  box-shadow: rgba(mix(#fff, red), .1) 0 1px 0, rgba(#000, .8) 0 1px 7px 0px inset;
   background-color: rgba(mix(#000, red, 60), .3);
   color: mix(#fff, red, 6);
 }

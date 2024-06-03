@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 group :assets do
-  gem "compass"
+  gem "sass"
 end
 
 group :development do
@@ -9,10 +9,7 @@ group :development do
   gem 'uglifier'
   gem 'guard'
   gem 'guard-shell'
-  gem 'guard-compass'
+  gem 'guard-sass'
   gem 'guard-coffeescript'
-  gem 'guard-coffeescript'
-  gem 'rb-inotify', :require => false
-  gem 'rb-fsevent', :require => false
-  gem 'rb-fchange', :require => false
+  gem 'base64'
 end

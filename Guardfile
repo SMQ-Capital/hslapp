@@ -4,7 +4,7 @@ require 'coffee-script'
 
 guard 'coffeescript', :input => 'coffeescripts', :output => 'javascripts'
 
-guard :compass do
+guard :sass do
   watch(%r{^assets/stylesheets/(.*)\.s[ac]ss$})
 end
 
@@ -17,7 +17,7 @@ guard :shell do
     modules = Dir.glob('assets/javascripts/modules/*.*')
     fingerprint = Digest::MD5.hexdigest((lib|modules).map! { |path| "#{File.mtime(path).to_i}" }.join+env)
 
-    if File.exists?(file) and File.open(file) {|f| f.readline} =~ /#{fingerprint}/
+    if File.file?(file) and File.open(file) {|f| f.readline} =~ /#{fingerprint}/
       false
     else
       js = Stitch::Package.new(:paths => 'assets/javascripts/modules', :dependencies => lib).compile

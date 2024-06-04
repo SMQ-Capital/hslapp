@@ -21,7 +21,7 @@ guard :shell do
       false
     else
       js = Stitch::Package.new(:paths => 'assets/javascripts/modules', :dependencies => lib).compile
-      js = Uglifier.new.compile(js) if env == 'production'
+      js = Uglifier.new(:harmony => true).compile(js) if env == 'production'
       js = "/* fingerprint: #{fingerprint} */\n" + js
 
       begin

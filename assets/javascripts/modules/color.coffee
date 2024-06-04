@@ -166,8 +166,8 @@ color = Backbone.Model.extend
   rgbToHex: (rgb) ->
     rgb = @isRgb rgb if typeof rgb is 'string'
     if rgb
-      hex = (parseFloat(c).toString(16) for c in rgb.slice(0,3))
-      hex = for c in hex
+      hex = (parseFloat(c).toString(16) for c from rgb.slice(0,3))
+      hex = for c from hex
         if c.length is 1 then "0#{c}" else c
       hex = hex.join('')
       if _.compact((i[0] is i[1] for i in hex.match(/.{1,2}/g))).length is 3

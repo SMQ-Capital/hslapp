@@ -1,7 +1,8 @@
 {
   "source": "index.html",
   "scripts": {
-    "build": "parcel index.html"
+    "dev": "parcel watch",
+    "build": "parcel build"
   },
   "devDependencies": {
     "@parcel/transformer-coffeescript": "^2.12.0",

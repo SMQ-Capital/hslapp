@@ -1,8 +1,14 @@
 {
   "source": "index.html",
   "scripts": {
-    "dev": "parcel watch",
+    "dev": "parcel serve",
     "build": "parcel build"
+  },
+  "dependencies": {
+    "backbone": "^1.6.0",
+    "dragdealer": "^0.10.0",
+    "jquery": "^3.7.1",
+    "underscore": "^1.13.6"
   },
   "devDependencies": {
     "@parcel/transformer-coffeescript": "^2.12.0",

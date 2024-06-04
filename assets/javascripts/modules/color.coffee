@@ -1,5 +1,5 @@
-import Backbone from '../lib/backbone'
-import _ from "../lib/underscore"
+import Backbone from 'backbone'
+import _ from "underscore"
 
 ColorModel = Backbone.Model.extend
 

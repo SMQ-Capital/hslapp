@@ -1,7 +1,7 @@
-import Backbone from '../lib/backbone'
-import _ from '../lib/underscore'
-import $ from '../lib/jquery-3.7.1.js'
-import { Dragdealer } from '../lib/dragdealer'
+import Backbone from 'backbone'
+import $ from 'jquery'
+import _ from "underscore"
+import { Dragdealer } from 'dragdealer'
 
 PickerView = Backbone.View.extend
 

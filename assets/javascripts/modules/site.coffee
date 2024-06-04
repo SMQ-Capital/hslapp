@@ -1,6 +1,6 @@
-import Backbone from '../lib/backbone'
-import _ from '../lib/underscore'
-import $ from '../lib/jquery-3.7.1.js'
+import Backbone from 'backbone'
+import $ from 'jquery'
+import _ from "underscore"
 
 import ColorModel from './color'
 import PickerView from './picker'

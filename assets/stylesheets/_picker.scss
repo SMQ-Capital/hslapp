@@ -28,21 +28,19 @@
 }
 
 .color-tiles {
+  display: flex;
   position: relative;
   width: 119px; height: 119px;
   margin: { bottom: 15px; right: 10px; top: 3px; }
-  float: left;
   background-color: rgba(#fff, 0);
   transition: background-color .1s;
   border-radius: 6px;
   &:after { border-top-right-radius: 8px; border-bottom-right-radius: 8px; }
   &:before { border-radius: 5px; }
   @extend %color-boxes;
-  .tile {
-    border-radius: 5px;
-  }
   div .tile {
-    // @include stretch;
+    width: 100%;
+    height: 100%;
   }
   div .tile, .bg {
     box-shadow: rgba(#fff, .1) 0 1px 2px 1px inset, rgba(#fff, .2) 0 1px inset, rgba(#000, .4) 0 -1px 1px inset, rgba(#000, .4) 0 1px 1px;
@@ -166,7 +164,7 @@
     &:last-child { border-bottom-radius: 5px; }
   }
   .none {
-    background-color: hsla(360, 100, 100, 0); 
+    background-color: hsla(360, 100%, 100%, 0); 
   }
   .light { background: #fff; }
   .dark { background: #000; }
@@ -272,6 +270,6 @@ input {
 
 input.error {
   box-shadow: rgba(mix(#fff, red), .1) 0 1px 0, rgba(#000, .8) 0 1px 7px 0px inset;
-  background-color: rgba(mix(#000, red, 60), .3);
-  color: mix(#fff, red, 6);
+  background-color: rgba(mix(#000, red, 60%), .3);
+  color: mix(#fff, red, 6%);
 }

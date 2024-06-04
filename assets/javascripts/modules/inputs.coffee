@@ -1,4 +1,8 @@
-inputs = Backbone.View.extend
+import Backbone from '../lib/backbone'
+import _ from '../lib/underscore'
+import $ from '../lib/jquery-3.7.1.js'
+
+InputsView = Backbone.View.extend
 
   initialize: (options) ->
     @setElement $(options.el)
@@ -79,4 +83,4 @@ inputs = Backbone.View.extend
   update: (el, val)->
     el.val "#{val}" unless el.val() is "#{val}"
   
-module.exports = (options) -> new inputs(options)
+export default InputsView

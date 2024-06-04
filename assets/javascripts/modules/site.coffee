@@ -1,9 +1,13 @@
-color = require('color')
-picker = require('picker')
-inputs = require('inputs')
-tiles = require('tiles')
+import Backbone from '../lib/backbone'
+import _ from '../lib/underscore'
+import $ from '../lib/jquery-3.7.1.js'
 
-site = Backbone.View.extend
+import ColorModel from './color'
+import PickerView from './picker'
+import InputsView from './inputs'
+import TilesView from './tiles'
+
+AppView = Backbone.View.extend
 
   initialize: (options) ->
     @setElement $('body')
@@ -117,8 +121,13 @@ site = Backbone.View.extend
       clearTimeout timer
       timer = setTimeout (-> fn.apply(context, args)), delay
 
-module.exports = ->
-  color = color()
-  picker(model: color, el: '#picker').render()
-  inputs(model: color, el: '#hslpicker')
-  new site(model: color, tiles: tiles(model: color, el: '#tiles'))
+colorModel = new ColorModel()
+
+tilesView = new TilesView(model: colorModel, el: '#tiles')
+pickerView = new PickerView(model: colorModel, el: '#picker')
+inputsView = new InputsView(model: colorModel, el: '#hslpicker')
+
+pickerView.render()
+
+appView = new AppView(model: colorModel, tiles: tilesView)
+export default appView

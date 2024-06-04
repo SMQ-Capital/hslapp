@@ -1,10 +1,15 @@
-picker = Backbone.View.extend
+import Backbone from '../lib/backbone'
+import _ from '../lib/underscore'
+import $ from '../lib/jquery-3.7.1.js'
+import { Dragdealer } from '../lib/dragdealer'
+
+PickerView = Backbone.View.extend
 
   initialize: (options) ->
     @setElement $(options.el)
       
   render: ->
-    @hueSlider = @$('#h-slider').dragdealer
+    @hueSlider = new Dragdealer(document.getElementById('h-slider'), {
       slide: false
       steps: 361
       speed: 100
@@ -12,8 +17,9 @@ picker = Backbone.View.extend
       animationCallback: (x,y)=>
         hue = Math.round(x*360)
         @model.h hue unless @model.get('h') is hue
+    })
 
-    @satSlider = @$('#s-slider').dragdealer
+    @satSlider = new Dragdealer(document.getElementById('s-slider'), {
       slide: false
       steps: 101
       speed: 100
@@ -21,8 +27,9 @@ picker = Backbone.View.extend
       animationCallback: (x,y)=>
         sat = Math.round(x*100)
         @model.s sat unless @model.get('s') is sat
+    })
 
-    @lumSlider = @$('#l-slider').dragdealer
+    @lumSlider = new Dragdealer(document.getElementById('l-slider'), {
       slide: false
       steps: 101
       speed: 100
@@ -30,15 +37,16 @@ picker = Backbone.View.extend
       animationCallback: (x,y)=>
         lum = Math.round(x*100)
         @model.l lum unless @model.get('l') is lum
+    })
 
-    @alphaSlider = @$('#a-slider').dragdealer
-      slide: false
-      steps: 101
-      speed: 100
-      x: @model.get 'a'
+    @alphaSlider = new Dragdealer(document.getElementById('a-slider'), {
+      slide: false,
+      steps: 101,
+      speed: 100,
       animationCallback: (x,y)=>
         alpha = Math.round(x*100)/100
         @model.a alpha unless @model.get('a') is alpha
+    })
 
     @updateSliderStyles('all')
 
@@ -99,4 +107,4 @@ picker = Backbone.View.extend
     color.splice pos,1,value
     color
 
-module.exports = (options) -> new picker(options)
+export default PickerView

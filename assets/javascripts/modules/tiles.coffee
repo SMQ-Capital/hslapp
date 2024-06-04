@@ -1,4 +1,8 @@
-tiles = Backbone.View.extend
+import Backbone from '../lib/backbone'
+import _ from '../lib/underscore'
+import $ from '../lib/jquery-3.7.1.js'
+
+TilesView = Backbone.View.extend
 
   initialize: (options) ->
     @model.on 'change:foreground', @updateForeground, this
@@ -40,4 +44,4 @@ tiles = Backbone.View.extend
     $('.background-color').css 'background-color': @model.hslaStr @model.get('background')
 
 
-module.exports = (options) -> new tiles(options)
+export default TilesView

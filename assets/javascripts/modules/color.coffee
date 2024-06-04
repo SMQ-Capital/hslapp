@@ -1,4 +1,7 @@
-color = Backbone.Model.extend
+import Backbone from '../lib/backbone'
+import _ from "../lib/underscore"
+
+ColorModel = Backbone.Model.extend
 
   defaults: {}
 
@@ -263,4 +266,4 @@ color = Backbone.Model.extend
     else
       p
 
-module.exports = (options) -> new color(options)
+export default ColorModel

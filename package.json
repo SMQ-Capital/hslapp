@@ -4,6 +4,7 @@
     "build": "parcel index.html"
   },
   "devDependencies": {
+    "@parcel/transformer-coffeescript": "^2.12.0",
     "@parcel/transformer-sass": "^2.12.0",
     "parcel": "^2.12.0"
   }

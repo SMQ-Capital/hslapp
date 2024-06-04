@@ -1,17 +1,39 @@
-# What's so great about HSL
+# The greatest HSL picker in the world
+> Now with a modern code base, and additional features.
 
-HSL (Hue, Saturation, Luminosity) allows us to describe meaningful relationships between colors. Give this brown color, `hsl(36, 73%, 10%)`, it's clear that if we desaturate 40 steps and lighten 70 steps we get `hsl(36, 33%, 80%)`, a cream color. Look at that in hex, `#2C1D07` to `#DDCFBB`, or in rgb, `rgb(44, 29, 7)` to `rgb(221, 207, 187)`, and the relationship between colors isn't evident in any meaningful way.
+## Fork Notice
 
-I use [Compass](http://beta.compass-style.org/) and [Sass](http://sass-lang.com/) for all of my web design work and there are great color functions that allow me to manipulate colors using these relationships. I can use Sass's adjust-color to convert brown to cream like in the example above.
+This is a fork of [imathis/hsl-picker](https://github.com/imathis/hsl-picker). The original project hasn't been maintained for 11 years, and I wanted to make some improvements. There were no other forks with meaningful changes, probably because the code base is very outdated and almost nothing works anymore.
 
-    adjust-color(#2C1D07, $saturation: -40%, $lightness: 70%)
-    //returns #DDCFBB
+**What was changed**
+- Updated all dependencies
+  - jquery 1.9.1 (2013) -> 3.7.1 (2023)
+  - backbone 0.9.10 (2012) -> 1.6.0 (2024)
+  - underscore 1.4.2 (2012) -> 1.13.6 (2022)
+  - dragdealer 0.9.5 -> 0.10.0 [^1]
+- Modernized codebase
+  - Converted all CommonJS modules to ESM
+  - Updated CoffeeScript code to use ES6 features
+  - Removed compass dependency
+- Modernized tooling
+  - Use parcel for everything
+    - `guard` -> `parcel`
+    - `compass` -> `parcel`
+    - `coffee-script` -> `parcel`
+    - `uglifier` -> `parcel`
 
-Sass converts easily between rgb, hsl, and hex so I can have convenience of HSL color relationships but the browser compatibility of hex color notation. There are other color functions like change-color which lets you set the properties of a color, and scale-color which applies color transformations on a relative scale. These are great, but because they work like HSL, you have to understand how HSL works.
+[^1]: That one sadly doesn't have any recent releases, and I couldn't be bothered to find a suitable replacement. It still works though, so it's fine for now.
 
-## HSB != HSL
+## What's so great about HSL
 
-In graphics software I pick colors in HSB (Hue, Saturation, Brightness) because it feels more natural to work with than RGB or CMYK. Now, with CSS3 we can use HSL which is actually quite different than HSB. Without a decent HSL color picker, it's difficult to understand.
+HSL is a great color model for several reasons:
+
+- **It's more intuitive than RGB**, making it easier for designers and artists to work with colors precisely. The hue, saturation, and lightness values directly correspond to how we perceive color.
+- HSL allows for **more efficient color conversion** between different color spaces, which is crucial for color matching, grading, and other color-related tasks.
+- HSL provides **more consistent and accurate** color representation compared to RGB. This consistency is key for maintaining color accuracy across different devices and applications.
+- Working with colors in HSL mode offers **greater precision** when making adjustments. You can tweak the hue, saturation, or lightness independently to achieve the exact color you want.
+
+In summary, HSL is a powerful color model that combines intuitive color manipulation, efficient conversion, wide gamut coverage, and precise color control. Its advantages make it a preferred choice for designers, artists, and anyone working extensively with color.
 
 ## How to think in HSL
 
@@ -20,6 +42,7 @@ Pick a Hue from 0 to 360 and with saturation at 100 and lightness at 50 and you'
 ## License
 
 Copyright (c) 2011 Brandon Mathis
+Copyright (c) 2024 Marco Quinten
 
 MIT License
 

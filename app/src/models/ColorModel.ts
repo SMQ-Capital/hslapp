@@ -20,8 +20,8 @@ export default class ColorModel {
 
     constructor() {
         this.innerActiveTile = 'foreground'
-        this.foreground = new Hsla(0, 0, 0, 0)
-        this.background = new Hsla(0, 0, 0, 0)
+        this.foreground = new Hsla(0, 50, 50, 1)
+        this.background = new Hsla(0, 50, 50, 0)
     }
 
     get activeTile(): ColorTile {

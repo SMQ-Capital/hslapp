@@ -9,6 +9,7 @@
     "contributors": ["Brandon Mathis"],
     "homepage": "https://github.com/smq-capital/hslapp",
     "source": "app/index.html",
+    "browserslist": "> 0.5%, last 2 versions, not dead, not IE 11, not op_mini all",
     "scripts": {
         "dev": "npx parcel serve",
         "build": "npx parcel build",

@@ -3,6 +3,26 @@ import InputsView from './inputs'
 import PickerView from './picker'
 import TilesView from './tiles'
 
+const SLOGANS = [
+    "a most excellent",
+    "the wizard's choice",
+    "a dazzingly accurate",
+    "a seriously awesome",
+    "a delightfully simple",
+    "a perfectly balanced",
+    "a deliciously vibrant",
+    "a deliciously tasteful",
+    "an incredibly stylish",
+    "a beautifully crafted",
+    "an amazingly versatile",
+    "a stunningly elegant",
+    "a fantastically fresh",
+    "a superbly sophisticated",
+    "a marvelously minimal",
+    "a wonderfully whimsical",
+    "a perfectly precise",
+]
+
 class AppView {
     private customStyle: HTMLStyleElement
 
@@ -28,6 +48,10 @@ class AppView {
             this.updatePageStyle(color)
             window.location.hash = color.hexString.replaceAll('#', '')
         })
+
+        // Replace slogan
+        const slogan = document.getElementById('slogan') as HTMLElement
+        slogan.textContent = SLOGANS[Math.floor(Math.random() * SLOGANS.length)]
     }
 
     updatePageStyle(color: Hsla) {

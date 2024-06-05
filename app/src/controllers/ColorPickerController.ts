@@ -1,4 +1,5 @@
-import { type default as ColorModel, Hsla } from './color'
+import type { ColorModel } from '../models'
+import { Hsla } from '../utils'
 
 class SliderConfig {
     public rangeInput: HTMLInputElement
@@ -14,7 +15,7 @@ class SliderConfig {
     }
 }
 
-export default class PickerView {
+export default class ColorPickerController {
     private sliders: Array<SliderConfig> = [
         new SliderConfig('h'),
         new SliderConfig('s'),

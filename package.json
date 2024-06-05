@@ -15,9 +15,9 @@
     "scripts": {
         "dev": "npx parcel serve",
         "build": "npx parcel build",
-        "lint": "npx @biomejs/biome lint --write src",
-        "format": "npx @biomejs/biome format --write src",
-        "check": "npx @biomejs/biome check --write src"
+        "lint": "npx @biomejs/biome lint --write app",
+        "format": "npx @biomejs/biome format --write app",
+        "check": "npx @biomejs/biome check --write app"
     },
     "devDependencies": {
         "@biomejs/biome": "^1.8.0",

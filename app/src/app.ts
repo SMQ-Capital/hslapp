@@ -1,32 +1,45 @@
-import ColorModel, { Hex, Hsla } from './color'
-import InputsView from './inputs'
-import PickerView from './picker'
-import TilesView from './tiles'
+import {
+    ColorPickerController,
+    ColorTileController,
+    TextInputController,
+} from './controllers'
+import { ColorModel } from './models'
+import { Hex, Hsla } from './utils'
 
 const SLOGANS = [
-    "a most excellent",
+    'a most excellent',
     "the wizard's choice",
-    "a dazzingly accurate",
-    "a seriously awesome",
-    "a delightfully simple",
-    "a perfectly balanced",
-    "a deliciously vibrant",
-    "a deliciously tasteful",
-    "an incredibly stylish",
-    "a beautifully crafted",
-    "an amazingly versatile",
-    "a stunningly elegant",
-    "a fantastically fresh",
-    "a superbly sophisticated",
-    "a marvelously minimal",
-    "a wonderfully whimsical",
-    "a perfectly precise",
+    'a dazzingly accurate',
+    'a seriously awesome',
+    'a delightfully simple',
+    'a perfectly balanced',
+    'a deliciously vibrant',
+    'a deliciously tasteful',
+    'an incredibly stylish',
+    'a beautifully crafted',
+    'an amazingly versatile',
+    'a stunningly elegant',
+    'a fantastically fresh',
+    'a superbly sophisticated',
+    'a marvelously minimal',
+    'a wonderfully whimsical',
+    'a perfectly precise',
 ]
 
-class AppView {
-    private customStyle: HTMLStyleElement
+class AppController {
+    private readonly customStyle: HTMLStyleElement
+    private readonly subcontrollers: Array<
+        ColorPickerController | ColorTileController | TextInputController
+    > = []
 
     constructor(public colorModel: ColorModel) {
+        // Instantiate sub controllers
+        this.subcontrollers = [
+            new ColorTileController(colorModel),
+            new ColorPickerController(colorModel),
+            new TextInputController(colorModel),
+        ]
+
         // Create custom style sheet
         this.customStyle = document.createElement('style')
         document.head.appendChild(this.customStyle)
@@ -108,8 +121,5 @@ class AppView {
 
 export default function initApp() {
     const colorModel = new ColorModel()
-    const tilesView = new TilesView(colorModel)
-    const pickerView = new PickerView(colorModel)
-    const inputsView = new InputsView(colorModel)
-    return new AppView(colorModel)
+    return new AppController(colorModel)
 }

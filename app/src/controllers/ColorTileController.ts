@@ -1,10 +1,11 @@
-import { type default as ColorModel, type ColorTile, Hsla } from './models/color'
+import type { default as ColorModel, ColorTile } from '../models/ColorModel'
+import { Hsla } from '../utils'
 
 function query(selector: string): HTMLElement {
     return document.querySelector(selector) as HTMLElement
 }
 
-export default class TilesView {
+export default class ColorTileController {
     constructor(public colorModel: ColorModel) {
         const elForeground = query('.foreground')
         const elBackground = query('.background')

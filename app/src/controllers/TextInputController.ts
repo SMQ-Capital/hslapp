@@ -1,4 +1,4 @@
-import type ColorModel from './models/color'
+import type ColorModel from '../models/ColorModel'
 
 function setText(id: string, text: string) {
     const el = document.getElementById(id) as HTMLInputElement
@@ -13,7 +13,7 @@ function clamp(value: number, min: number, max: number) {
     return Math.min(Math.max(value, min), max)
 }
 
-export default class InputsView {
+export default class TextInputController {
     constructor(public colorModel: ColorModel) {
         // Update all text inputs on color change
         colorModel.onChange((_tile, color) => {

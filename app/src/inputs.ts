@@ -1,4 +1,4 @@
-import type ColorModel from './color'
+import type ColorModel from './models/color'
 
 function setText(id: string, text: string) {
     const el = document.getElementById(id) as HTMLInputElement

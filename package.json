@@ -1,5 +1,5 @@
 {
-  "source": "index.html",
+  "source": "app/index.html",
   "scripts": {
     "dev": "npx parcel serve",
     "build": "npx parcel build",

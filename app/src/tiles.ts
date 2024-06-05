@@ -1,4 +1,4 @@
-import { type default as ColorModel, type ColorTile, Hsla } from './color'
+import { type default as ColorModel, type ColorTile, Hsla } from './models/color'
 
 function query(selector: string): HTMLElement {
     return document.querySelector(selector) as HTMLElement

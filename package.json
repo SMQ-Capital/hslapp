@@ -1,19 +1,27 @@
 {
-  "source": "app/index.html",
-  "scripts": {
-    "dev": "npx parcel serve",
-    "build": "npx parcel build",
-    "lint": "npx @biomejs/biome lint --write src",
-    "format": "npx @biomejs/biome format --write src",
-    "check": "npx @biomejs/biome check --write src"
-  },
-  "dependencies": {
-    "typescript": "^5.4.5"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.8.0",
-    "@parcel/transformer-coffeescript": "^2.12.0",
-    "@parcel/transformer-sass": "^2.12.0",
-    "parcel": "^2.12.0"
-  }
+    "name": "hslapp",
+    "license": "MIT",
+    "private": true,
+    "author": {
+        "name": "SMQ Capital OÜ",
+        "url": "https://smq.capital"
+    },
+    "contributors": ["Brandon Mathis"],
+    "homepage": "https://github.com/smq-capital/hslapp",
+    "source": "app/index.html",
+    "scripts": {
+        "dev": "npx parcel serve",
+        "build": "npx parcel build",
+        "lint": "npx @biomejs/biome lint --write src",
+        "format": "npx @biomejs/biome format --write src",
+        "check": "npx @biomejs/biome check --write src"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@biomejs/biome": "^1.8.0",
+        "@parcel/transformer-coffeescript": "^2.12.0",
+        "@parcel/transformer-sass": "^2.12.0",
+        "parcel": "^2.12.0",
+        "typescript": "^5.4.5"
+    }
 }

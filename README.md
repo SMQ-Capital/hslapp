@@ -9,10 +9,13 @@ The original project hasn't been maintained for 11 years, and I wanted to make s
 <details>
   <summary>What was changed and why</summary>
 
-  ### Overview
-  My main goal was to - first off - make the project build again. But I also wanted to modernize the code base, remove unnecessary dependencies, and make it fit for the future.
+  ### TLDR
+  This is now a **modern**, runtime **dependency-free**, and **maintainable** version of the original project. It's **ready for the future** and can be easily extended and improved upon.
 
-  This is an amazing project that deserves to be maintained and used by people. It's a great tool for designers and developers alike, and I wanted to make sure it stays that way.
+  ### Overview
+  Our main goal was to - first off - make the project build again. But we also wanted to modernize the code base, remove unnecessary dependencies, and make it fit for the future.
+
+  This is an amazing project that deserves to be maintained and used by people. It's a great tool for designers and developers alike, and we wanted to make sure it stays that way.
 
   ### Details
   - Modernized codebase
@@ -29,9 +32,6 @@ The original project hasn't been maintained for 11 years, and I wanted to make s
     - Integrated biome for linting and formatting
     - Replaced guard with parcel for a modern build process
 
-  ### TLDR
-  This is now a **modern**, runtime **dependency-free**, and **maintainable** version of the original project. It's ready for the future and can be easily extended and improved upon.
-
 </details>
 
 ## Building the project
@@ -44,43 +44,16 @@ $ npm run build   # production build
 
 ## What's so great about HSL
 
-HSL is a great color model for several reasons:
+HSL (Hue, Saturation, Lightness) is a great color model for several reasons:
 
-- **It's more intuitive than RGB**, making it easier for designers and artists to work with colors precisely. The hue, saturation, and lightness values directly correspond to how we perceive color.
-- HSL allows for **more efficient color conversion** between different color spaces, which is crucial for color matching, grading, and other color-related tasks.
-- HSL provides **more consistent and accurate** color representation compared to RGB. This consistency is key for maintaining color accuracy across different devices and applications.
-- Working with colors in HSL mode offers **greater precision** when making adjustments. You can tweak the hue, saturation, or lightness independently to achieve the exact color you want.
+- **Intuitive**: It describes colors in a way that makes sense to humans.
+- **Easy Adjustments**: You can easily tweak colors to be lighter, darker, more vivid, or more muted without complex calculations.
+- **Design Flexibility**: Perfect for creating harmonious color schemes and ensuring consistency across your designs.
 
 In summary, HSL is a powerful color model that combines intuitive color manipulation, efficient conversion, wide gamut coverage, and precise color control. Its advantages make it a preferred choice for designers, artists, and anyone working extensively with color.
 
 ## How to think in HSL
 
-Pick a Hue from 0 to 360 and with saturation at 100 and lightness at 50 and you'll have the purest form of that color. Reduce the saturation and you move towards gray. Increasing the brightness moves you towards white, decreasing it moves you towards black.
-
-## License
-
-```
-Copyright (c) 2011 Brandon Mathis
-Copyright (c) 2024 Marco Quinten
-
-MIT License
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-```
+- **Hue**: The color itself on a 360-degree wheel, starting at red (`0`) and cycling through the visible color spectrum until it arrives at red again (`360`).
+- **Saturation**: The vividness or intensity of the color, from `0%` (gray) to `100%` (most vivid).
+- **Lightness**: The brightness of the color, from `0%` (black) to `100%` (white).

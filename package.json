@@ -6,7 +6,9 @@
         "name": "SMQ Capital OÜ",
         "url": "https://smq.capital"
     },
-    "contributors": ["Brandon Mathis"],
+    "contributors": [
+        "Brandon Mathis"
+    ],
     "homepage": "https://github.com/smq-capital/hslapp",
     "source": "app/index.html",
     "browserslist": "> 0.5%, last 2 versions, not dead, not IE 11, not op_mini all",
@@ -17,11 +19,12 @@
         "format": "npx @biomejs/biome format --write src",
         "check": "npx @biomejs/biome check --write src"
     },
-    "dependencies": {},
     "devDependencies": {
         "@biomejs/biome": "^1.8.0",
+        "@parcel/packager-raw-url": "^2.12.0",
         "@parcel/transformer-coffeescript": "^2.12.0",
         "@parcel/transformer-sass": "^2.12.0",
+        "@parcel/transformer-webmanifest": "^2.12.0",
         "parcel": "^2.12.0",
         "typescript": "^5.4.5"
     }

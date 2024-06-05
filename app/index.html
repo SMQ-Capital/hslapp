@@ -2,72 +2,75 @@
 <html>
 
 <head>
-  <title>HSL Color Picker</title>
-  <link href="index.scss" media="screen" rel="stylesheet" type="text/css">
-  <link href="favicon.png" rel="shortcut icon">
+    <title>HSL Color Picker</title>
+    <link href="index.scss" media="screen" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
 </head>
 
 <body>
-  <header>
-    <p id="slogan">the wizard's choice</p>
-    <h1>HSL Color Picker</h1>
-  </header>
-  <div id="hslpicker">
-    <div class="frame">
-      <div id='tiles' class='color-tiles'>
-        <div class='foreground tile selected' data-name='foreground' title='Adjust foreground tile'>
-          <div class='foreground-color tile'></div>
+    <header>
+        <p id="slogan">the wizard's choice</p>
+        <h1>HSL Color Picker</h1>
+    </header>
+    <div id="hslpicker">
+        <div class="frame">
+            <div id='tiles' class='color-tiles'>
+                <div class='foreground tile selected' data-name='foreground' title='Adjust foreground tile'>
+                    <div class='foreground-color tile'></div>
+                </div>
+                <div class='background tile' data-name='background' title='Adjust background tile'>
+                    <div class='background-color tile'></div>
+                </div>
+                <div class='expose' title='show/hide background tile'></div>
+            </div>
+            <div id='picker' class='sliders'>
+                <div class="sliderWrapper">
+                    <div class="slider">
+                        <input type="range" min="0" max="360" step="1" value="0" id="h-slider">
+                    </div>
+                    <input autocomplete="off" type="text" id='h-text'>
+                </div>
+                <div class="sliderWrapper">
+                    <div class="slider">
+                        <input type="range" min="0" max="100" step="1" value="50" id="s-slider">
+                    </div>
+                    <input autocomplete="off" type="text" id='s-text'>
+                </div>
+                <div class="sliderWrapper">
+                    <div class="slider">
+                        <input type="range" min="0" max="100" step="1" value="50" id="l-slider">
+                    </div>
+                    <input autocomplete="off" type="text" id='l-text'>
+                </div>
+                <div class="sliderWrapper">
+                    <div class="slider">
+                        <input type="range" min="0" max="1" step="0.01" value="1" id="a-slider">
+                    </div>
+                    <input autocomplete="off" type="text" id='a-text'>
+                </div>
+            </div>
         </div>
-        <div class='background tile' data-name='background' title='Adjust background tile'>
-          <div class='background-color tile'></div>
+        <div class='color-inputs'>
+            <input id="hex" spellcheck="false" type="text">
+            <input id="rgba" spellcheck="false" type="text">
+            <input id="hsla" spellcheck="false" type="text">
         </div>
-        <div class='expose' title='show/hide background tile'></div>
-      </div>
-      <div id='picker' class='sliders'>
-        <div class="sliderWrapper">
-          <div class="slider">
-            <input type="range" min="0" max="360" step="1" value="0" id="h-slider">
-          </div>
-          <input autocomplete="off" type="text" id='h-text'>
-        </div>
-        <div class="sliderWrapper">
-          <div class="slider">
-            <input type="range" min="0" max="100" step="1" value="50" id="s-slider">
-          </div>
-          <input autocomplete="off" type="text" id='s-text'>
-        </div>
-        <div class="sliderWrapper">
-          <div class="slider">
-            <input type="range" min="0" max="100" step="1" value="50" id="l-slider">
-          </div>
-          <input autocomplete="off" type="text" id='l-text'>
-        </div>
-        <div class="sliderWrapper">
-          <div class="slider">
-            <input type="range" min="0" max="1" step="0.01" value="1" id="a-slider">
-          </div>
-          <input autocomplete="off" type="text" id='a-text'>
-        </div>
-      </div>
     </div>
-    <div class='color-inputs'>
-      <input id="hex" spellcheck="false" type="text">
-      <input id="rgba" spellcheck="false" type="text">
-      <input id="hsla" spellcheck="false" type="text">
-    </div>
-  </div>
-  <footer>
-    <p>
-      2024 SMQ Capital OÜ
-      <a href="http://github.com/smq-capital/hslapp">Source</a>
-    </p>
-  </footer>
+    <footer>
+        <p>
+            2024 SMQ Capital OÜ
+            <a href="http://github.com/smq-capital/hslapp">Source</a>
+        </p>
+    </footer>
 </body>
 <script type="module">
-  import initializeApp from "./src/app.ts"
-  document.addEventListener('DOMContentLoaded', () => {
-    initializeApp()
-  })
+    import initializeApp from "./src/app.ts"
+    document.addEventListener('DOMContentLoaded', () => {
+        initializeApp()
+    })
 </script>
 
 </html>

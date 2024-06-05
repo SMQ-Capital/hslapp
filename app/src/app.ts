@@ -58,7 +58,11 @@ class AppView {
         const linkHover = new Hsla(color.h, 100, 70, 1)
         const paragraphs = new Hsla(color.h, 40, 70, 1)
         const headingsAndCode = new Hsla(color.h, 40, 70, 1)
+        const bodyColor = new Hsla(color.h, 2, 16, 1)
         this.customStyle.innerText = `
+            html {
+                background-color: ${bodyColor.hslaString};
+            }
             body a:hover {
                 color: ${linkHover.hslaString} !important;
             }

@@ -3,26 +3,26 @@
 
 ## Fork Notice
 
-This is a fork of [imathis/hsl-picker](https://github.com/imathis/hsl-picker). The original project hasn't been maintained for 11 years, and I wanted to make some improvements. There were no other forks with meaningful changes, probably because the code base is very outdated and almost nothing works anymore.
+This is a fork of [imathis/hsl-picker](https://github.com/imathis/hsl-picker).
+
+The original project hasn't been maintained for 11 years, and I wanted to make some improvements. There were no other forks with meaningful changes, probably because the code base was very outdated and almost nothing worked anymore.
 
 **What was changed**
-- Updated all dependencies
-  - jquery 1.9.1 (2013) -> 3.7.1 (2023)
-  - backbone 0.9.10 (2012) -> 1.6.0 (2024)
-  - underscore 1.4.2 (2012) -> 1.13.6 (2022)
-  - dragdealer 0.9.5 -> 0.10.0 [^1]
 - Modernized codebase
-  - Converted all CommonJS modules to ESM
-  - Updated CoffeeScript code to use ES6 features
-  - Removed compass dependency
+  - Removed jQuery, Underscore, Backbone... all gone
+  - Migrated all Backbone models and views to plain classes
+  - Migrated all CoffeeScript to TypeScript
+  - Refactored large parts of the code
+- Modernized styling
+  - Removed Compass (very outdated)
+  - Removed lots of unnecessary scss rules
+  - Removed unnecessary width constraints
+  - Migrated the layout to flexbox
 - Modernized tooling
-  - Use parcel for everything
-    - `guard` -> `parcel`
-    - `compass` -> `parcel`
-    - `coffee-script` -> `parcel`
-    - `uglifier` -> `parcel`
+  - Integrated biome for linting and formatting
+  - Replaced guard with parcel for a modern build process
 
-[^1]: That one sadly doesn't have any recent releases, and I couldn't be bothered to find a suitable replacement. It still works though, so it's fine for now.
+This is now a **modern**, **dependency-free**, **and maintainable** version of the original project.
 
 ## What's so great about HSL
 

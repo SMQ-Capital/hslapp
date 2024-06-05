@@ -4,27 +4,7 @@ import {
     TextInputController,
 } from './controllers'
 import { ColorModel } from './models'
-import { Hex, Hsla } from './utils'
-
-const SLOGANS = [
-    'a most excellent',
-    "the wizard's choice",
-    'a dazzingly accurate',
-    'a seriously awesome',
-    'a delightfully simple',
-    'a perfectly balanced',
-    'a deliciously vibrant',
-    'a deliciously tasteful',
-    'an incredibly stylish',
-    'a beautifully crafted',
-    'an amazingly versatile',
-    'a stunningly elegant',
-    'a fantastically fresh',
-    'a superbly sophisticated',
-    'a marvelously minimal',
-    'a wonderfully whimsical',
-    'a perfectly precise',
-]
+import { Hex, Hsla, Slogans } from './utils'
 
 class AppController {
     private readonly customStyle: HTMLStyleElement
@@ -32,7 +12,7 @@ class AppController {
         ColorPickerController | ColorTileController | TextInputController
     > = []
 
-    constructor(public colorModel: ColorModel) {
+    constructor(readonly colorModel: ColorModel) {
         // Instantiate sub controllers
         this.subcontrollers = [
             new ColorTileController(colorModel),
@@ -64,14 +44,18 @@ class AppController {
 
         // Replace slogan
         const slogan = document.getElementById('slogan') as HTMLElement
-        slogan.textContent = SLOGANS[Math.floor(Math.random() * SLOGANS.length)]
+        slogan.textContent = Slogans.randomSlogan()
     }
 
+    // Update the page style based on the current color
     updatePageStyle(color: Hsla) {
+        // Define colors based on the current color
         const linkHover = new Hsla(color.h, 100, 70, 1)
         const paragraphs = new Hsla(color.h, 40, 70, 1)
         const headingsAndCode = new Hsla(color.h, 40, 70, 1)
         const bodyColor = new Hsla(color.h, 2, 16, 1)
+
+        // Update the custom style sheet
         this.customStyle.innerText = `
             html {
                 background-color: ${bodyColor.hslaString};
@@ -91,6 +75,7 @@ class AppController {
         `
     }
 
+    // Get the CSS text shadow definition for a given color
     getTextShadow(color: Hsla) {
         const sat = color.l < 35 || color.l > 80 ? 30 : color.s
         const lum = color.l < 35 ? 35 : color.l > 80 ? 80 : color.l

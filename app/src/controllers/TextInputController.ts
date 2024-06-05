@@ -14,7 +14,7 @@ function clamp(value: number, min: number, max: number) {
 }
 
 export default class TextInputController {
-    constructor(public colorModel: ColorModel) {
+    constructor(readonly colorModel: ColorModel) {
         // Update all text inputs on color change
         colorModel.onChange((_tile, color) => {
             setText('hex', color.hexString)

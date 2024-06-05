@@ -16,14 +16,16 @@ class SliderConfig {
 }
 
 export default class ColorPickerController {
-    private sliders: Array<SliderConfig> = [
+    // Slider configurations for the various color components.
+    // This has to be in sync with the HTML template.
+    private readonly sliders: Array<SliderConfig> = [
         new SliderConfig('h'),
         new SliderConfig('s'),
         new SliderConfig('l'),
         new SliderConfig('a'),
     ]
 
-    constructor(public colorModel: ColorModel) {
+    constructor(public readonly colorModel: ColorModel) {
         // Listen for color model changes
         colorModel.onChange((tile, color) => {
             // Update all sliders
@@ -86,6 +88,7 @@ export default class ColorPickerController {
         this.updateBackgrounds()
     }
 
+    // Update the backgrounds of all sliders to reflect the current color.
     updateBackgrounds(color: Hsla = this.colorModel.activeTileColor) {
         for (const slider of this.sliders) {
             let index: number | undefined
@@ -137,6 +140,7 @@ export default class ColorPickerController {
         }
     }
 
+    // Get the vendor-prefixed CSS value for a given property.
     prefixedCssValue(property: string, value: string): string {
         const el = document.createElement('div')
         const style = el.style

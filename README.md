@@ -6,34 +6,41 @@
 
 The original project hasn't been maintained for 11 years, and I wanted to make some improvements. There were no other forks with meaningful changes, probably because the code base was very outdated and almost nothing worked anymore.
 
-**What was changed**
-- Modernized codebase
-  - Removed jQuery, Underscore, Backbone... all gone
-  - Migrated all Backbone models and views to plain classes
-  - Migrated all CoffeeScript to TypeScript
-  - Refactored large parts of the code
-- Modernized styling
-  - Removed Compass (very outdated)
-  - Removed lots of unnecessary scss rules
-  - Removed unnecessary width constraints
-  - Migrated the layout to flexbox
-- Modernized tooling
-  - Integrated biome for linting and formatting
-  - Replaced guard with parcel for a modern build process
+<details>
+  <summary>What was changed and why</summary>
 
-This is now a **modern**, **dependency-free**, **and maintainable** version of the original project.
+  ### Overview
+  My main goal was to - first off - make the project build again. But I also wanted to modernize the code base, remove unnecessary dependencies, and make it fit for the future.
+
+  This is an amazing project that deserves to be maintained and used by people. It's a great tool for designers and developers alike, and I wanted to make sure it stays that way.
+
+  ### Details
+  - Modernized codebase
+    - Removed jQuery, Underscore, Backbone... all gone
+    - Migrated all Backbone models and views to plain classes
+    - Migrated all CoffeeScript to TypeScript
+    - Refactored large parts of the code
+  - Modernized styling
+    - Removed Compass (very outdated)
+    - Removed lots of unnecessary scss rules
+    - Removed unnecessary width constraints
+    - Migrated the layout to flexbox
+  - Modernized tooling
+    - Integrated biome for linting and formatting
+    - Replaced guard with parcel for a modern build process
+
+  ### TLDR
+  This is now a **modern**, runtime **dependency-free**, and **maintainable** version of the original project. It's ready for the future and can be easily extended and improved upon.
+
+</details>
 
 ## Building the project
 
-1. Clone the repository:
-  ```bash
-  git clone https://github.com/SplittyDev/swift-colors.git; cd swift-colors
-  ```
-2. Install dependencies: `npm install`
-3. ???
-4. Profit!
-
-Now you can run the development server with `npm run dev`, or build the project with `npm run build`.
+```shell
+$ npm install
+$ npm run dev     # development server
+$ npm run build   # production build
+```
 
 ## What's so great about HSL
 

@@ -23,6 +23,18 @@ The original project hasn't been maintained for 11 years, and I wanted to make s
 
 This is now a **modern**, **dependency-free**, **and maintainable** version of the original project.
 
+## Building the project
+
+1. Clone the repository:
+  ```bash
+  git clone https://github.com/SplittyDev/swift-colors.git; cd swift-colors
+  ```
+2. Install dependencies: `npm install`
+3. ???
+4. Profit!
+
+Now you can run the development server with `npm run dev`, or build the project with `npm run build`.
+
 ## What's so great about HSL
 
 HSL is a great color model for several reasons:

@@ -2,8 +2,7 @@
 > Now with a modern code base, and additional features.
 
 ## Fork Notice
-
-This is a fork of [imathis/hsl-picker](https://github.com/imathis/hsl-picker).
+> This is a fork of [imathis/hsl-picker](https://github.com/imathis/hsl-picker).  
 
 The original project hasn't been maintained for 11 years, and I wanted to make some improvements. There were no other forks with meaningful changes, probably because the code base was very outdated and almost nothing worked anymore.
 

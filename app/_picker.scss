@@ -1,239 +1,312 @@
 #hslpicker {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 %checked {
-  $tile1: rgba(#fff, .2);
-  $tile2: transparent;
-  background-image:
-    linear-gradient(45deg, $tile1 25%, $tile2 25%, $tile2 75%, $tile1 75%, $tile1),
-    linear-gradient(45deg, $tile1 25%, $tile2 25%, $tile2 75%, $tile1 75%, $tile1)
-  ;
-  background-size: 20px 20px;
-  background-position: 0px 0px, 10px 10px;
+    $tile1: rgba(#fff, .2);
+    $tile2: transparent;
+    background-image:
+        linear-gradient(45deg, $tile1 25%, $tile2 25%, $tile2 75%, $tile1 75%, $tile1),
+        linear-gradient(45deg, $tile1 25%, $tile2 25%, $tile2 75%, $tile1 75%, $tile1);
+    background-size: 20px 20px;
+    background-position: 0px 0px, 10px 10px;
 }
 
 .color-tiles {
-  display: flex;
-  position: relative;
-  width: 119px;
-  height: 119px;
-  background-color: rgba(#fff, 0);
-  transition: background-color .1s;
-  border-radius: 6px;
-  div .tile {
-    width: 100%;
-    height: 100%;
+    display: flex;
+    position: relative;
+    width: 119px;
+    height: 119px;
+    background-color: rgba(#fff, 0);
+    transition: background-color .1s;
     border-radius: 6px;
-  }
-  div .tile, .bg {
-    box-shadow: rgba(#fff, .1) 0 1px 2px 1px inset, rgba(#fff, .2) 0 1px inset, rgba(#000, .4) 0 -1px 1px inset, rgba(#000, .4) 0 1px 1px;
-  }
+
+    div .tile {
+        width: 100%;
+        height: 100%;
+        border-radius: 6px;
+    }
+
+    div .tile,
+    .bg {
+        box-shadow: rgba(#fff, .1) 0 1px 2px 1px inset, rgba(#fff, .2) 0 1px inset, rgba(#000, .4) 0 -1px 1px inset, rgba(#000, .4) 0 1px 1px;
+    }
 }
 
-.foreground, .background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+.foreground,
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .foreground {
-  z-index: 2;
+    z-index: 2;
 }
 
 .background {
-  background-color: rgba(#fff, 0);
+    background-color: rgba(#fff, 0);
 }
 
 .expose {
-  transition: all .15s ease-out;
-  border-radius: 2px;
-  position: absolute; top: 5px; right: 5px;
-  width: 16px; height: 16px;
-  z-index: 2;
-  cursor: pointer;
-  opacity: .4;
-  background: rgba(#000, .8);
-  $pad: 3px;
-  $arrow-color: rgba(#fff, .8);
-  &:before,
-  &:after {
-    content: "";
+    transition: all .15s ease-out;
+    border-radius: 2px;
     position: absolute;
-    height: 5px; width: 5px;
-  }
-  &:before {
-    border: solid 2px $arrow-color { bottom: 0; right: 0 }
-    top: $pad; left: $pad;
-  }
-  &:after {
-    border: solid 2px $arrow-color { top: 0; left: 0 }
-    bottom: $pad; right: $pad;
-  }
+    top: 5px;
+    right: 5px;
+    width: 16px;
+    height: 16px;
+    z-index: 2;
+    cursor: pointer;
+    opacity: .4;
+    background: rgba(#000, .8);
+    $pad: 3px;
+    $arrow-color: rgba(#fff, .8);
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        height: 5px;
+        width: 5px;
+    }
+
+    &:before {
+        border: solid 2px $arrow-color {
+            bottom: 0;
+            right: 0
+        }
+
+        top: $pad;
+        left: $pad;
+    }
+
+    &:after {
+        border: solid 2px $arrow-color {
+            top: 0;
+            left: 0
+        }
+
+        bottom: $pad;
+        right: $pad;
+    }
 }
 
 .color-tiles:hover .expose {
-  opacity: 1;
+    opacity: 1;
 }
 
-.exposed .expose, .expose:hover {
-  width: 20px; height: 20px;
-  top: 3px; right: 3px;
+.exposed .expose,
+.expose:hover {
+    width: 20px;
+    height: 20px;
+    top: 3px;
+    right: 3px;
 }
 
 .exposed .expose {
-  $arrow-color: rgba(#fff, .8);
-  $pad: 3px;
-  &:before, &:after { height: 4px; width: 4px; }
-  &:before {
-    border: solid 2px $arrow-color { top: 0; left: 0 }
-    top: $pad; left: $pad;
-  }
-  &:after {
-    border: solid 2px $arrow-color { bottom: 0; right: 0 }
-    bottom: $pad; right: $pad;
-  }
+    $arrow-color: rgba(#fff, .8);
+    $pad: 3px;
+
+    &:before,
+    &:after {
+        height: 4px;
+        width: 4px;
+    }
+
+    &:before {
+        border: solid 2px $arrow-color {
+            top: 0;
+            left: 0
+        }
+
+        top: $pad;
+        left: $pad;
+    }
+
+    &:after {
+        border: solid 2px $arrow-color {
+            bottom: 0;
+            right: 0
+        }
+
+        bottom: $pad;
+        right: $pad;
+    }
 }
 
 .background-color {
-  z-index: 0;
-  cursor: pointer;
-  background-color: rgba(#fff, 0);
+    z-index: 0;
+    cursor: pointer;
+    background-color: rgba(#fff, 0);
 }
 
 .exposed {
-  .bg { left: 0 }
-  .foreground { 
-    left: 29px; top: 29px;
-    width: 90px; height: 90px;
-  }
-  .background {
-    right: 29px;
-    width: 90px; height: 90px;
-    box-shadow: rgba(#000, .8) 0 1px 10px;
-  }
-  .foreground {
-    box-shadow: rgba(#000, .8) 0 1px 10px;
-    cursor: pointer;
-  }
-  .selected {
-    &:after {
-      content: "";
-      // @include stretch;
-      border-radius: 5px;
-      z-index: 1;
-      box-shadow: rgba(#fff, .5) 0 0 0px 1px inset, rgba(#000, .5) 0 0 0 5px inset;
-      cursor: pointer;
+    .bg {
+        left: 0
     }
-  }
+
+    .foreground {
+        left: 29px;
+        top: 29px;
+        width: 90px;
+        height: 90px;
+    }
+
+    .background {
+        right: 29px;
+        width: 90px;
+        height: 90px;
+        box-shadow: rgba(#000, .8) 0 1px 10px;
+    }
+
+    .foreground {
+        box-shadow: rgba(#000, .8) 0 1px 10px;
+        cursor: pointer;
+    }
+
+    .selected {
+        &:after {
+            content: "";
+            // @include stretch;
+            border-radius: 5px;
+            z-index: 1;
+            box-shadow: rgba(#fff, .5) 0 0 0px 1px inset, rgba(#000, .5) 0 0 0 5px inset;
+            cursor: pointer;
+        }
+    }
 }
 
-.background, .foreground {
-  transition: all .25s ease-in-out;
+.background,
+.foreground {
+    transition: all .25s ease-in-out;
 }
 
 .sliders {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .sliderWrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-  width: 450px;
-  height: 20px;
-  border-radius: 10px;
-
-  .slider {
     display: flex;
-    flex-grow: 1;
-    height: 100%;
+    flex-direction: row;
     align-items: center;
-    cursor: pointer;
-    @extend %checked;
-    border-radius: 10px;
-  }
-
-  input[type="range"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    flex-grow: 1;
-    box-shadow: none;
-    background: transparent;
-    transition: background-color .1s;
-    border-radius: 10px;
-    outline: .2rem solid hsl(0,0%,10%);
-    box-shadow: rgba(#fff, .1) 0 1px 2px 1px inset, rgba(#fff, .2) 0 1px inset, rgba(#000, .4) 0 -1px 1px inset, rgba(#000, .4) 0 1px 1px, rgba(#000, 1) 0 0 2px 1px;
-
-    &::-webkit-slider-thumb, &::-moz-range-thumb {
-      appearance: none;
-      padding: 0;
-      margin: 0;
-      border: none;
-      outline: none;
-      display: block;
-      position: relative;
-      box-sizing: border-box;
-      cursor: pointer;
-      width: 22px;
-      height: 22px;
-      transition: background-color .4s;
-      background-image: radial-gradient(circle at top center, rgba(#fff, .9), rgba(#fff, .2) 15px);
-      background-color: rgba(#ddd, 1);
-      border-radius: 1em;
-      box-shadow: rgba(#fff, 1) 0px 1px 1px inset, rgba(#000, 0.4) 0px -1px 1px inset, rgba(#000, 0.4) 0px 1px 4px 0px, rgba(#000, .6) 0 0 2px;
-
-      &:hover {
-        background-color: rgba(#ddd, 0.5);
-        backdrop-filter: blur(1rem);
-      }
-    }
-  }
-
-  input[type="text"] {
-    width: 50px;
+    gap: 1rem;
+    width: 450px;
     height: 20px;
-    text-align: center;
-    color: hsl(0,0%,90%);
-    font-size: .9rem;
-  }
+    border-radius: 10px;
+
+    .slider {
+        display: flex;
+        flex-grow: 1;
+        height: 100%;
+        align-items: center;
+        cursor: pointer;
+        @extend %checked;
+        border-radius: 10px;
+    }
+
+    input[type="range"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        flex-grow: 1;
+        box-shadow: none;
+        background: transparent;
+        transition: background-color .1s;
+        border-radius: 10px;
+        outline: .2rem solid hsl(0, 0%, 10%);
+        box-shadow: rgba(#fff, .1) 0 1px 2px 1px inset, rgba(#fff, .2) 0 1px inset, rgba(#000, .4) 0 -1px 1px inset, rgba(#000, .4) 0 1px 1px, rgba(#000, 1) 0 0 2px 1px;
+
+        &::-webkit-slider-thumb,
+        &::-moz-range-thumb {
+            appearance: none;
+            padding: 0;
+            margin: 0;
+            border: none;
+            outline: none;
+            display: block;
+            position: relative;
+            box-sizing: border-box;
+            cursor: pointer;
+            width: 22px;
+            height: 22px;
+            transition: background-color .4s;
+            background-image: radial-gradient(circle at top center, rgba(#fff, .9), rgba(#fff, .2) 15px);
+            background-color: rgba(#ddd, 1);
+            border-radius: 1em;
+            box-shadow: rgba(#fff, 1) 0px 1px 1px inset, rgba(#000, 0.4) 0px -1px 1px inset, rgba(#000, 0.4) 0px 1px 4px 0px, rgba(#000, .6) 0 0 2px;
+
+            &:hover {
+                background-color: rgba(#ddd, 0.5);
+                backdrop-filter: blur(1rem);
+            }
+        }
+    }
+
+    input[type="text"] {
+        width: 50px;
+        height: 20px;
+        text-align: center;
+        color: hsl(0, 0%, 90%);
+        font-size: .9rem;
+    }
 }
 
 .color-inputs {
-  clear: left;
-  input {
-    text-align: center; margin-left: 2px;
-    &:first-child { margin-left: 0; }
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+
+    > div {
+        width: 100%;
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    input {
+        text-align: center;
+        flex-grow: 1;
+    }
 }
 
 input {
-  transition: all .3s;
-  border-radius: 4px;
-  box-shadow: rgba(#fff, .1) 0 1px 0, rgba(#000, .8) 0 1px 7px 0px inset;
-  border: 0;
-  padding: 8px 6px;
-  font-size: 1em;
-  background-color: rgba(#000, .3);
-  color: rgba(#fff, .8);
-  text-shadow: rgba(#000, .5) 0 2px 1px;
-  &:focus { outline: none; color: #fff; }
+    transition: all .3s;
+    border-radius: 4px;
+    box-shadow: rgba(#fff, .1) 0 1px 0, rgba(#000, .8) 0 1px 7px 0px inset;
+    border: 0;
+    padding: 8px 6px;
+    font-size: 1em;
+    background-color: rgba(#000, .3);
+    color: rgba(#fff, .8);
+    text-shadow: rgba(#000, .5) 0 2px 1px;
+
+    &:focus {
+        outline: none;
+        color: #fff;
+    }
 }
 
-#hex  { width: 5.7em; }
-#rgba { width: 14em; }
-#hsla { width: 15em; }
+#hex {
+    width: 5.7em;
+}
+
+#rgba {
+    width: 14em;
+}
+
+#hsla {
+    width: 15em;
+}
 
 input.error {
-  box-shadow: rgba(mix(#fff, red), .1) 0 1px 0, rgba(#000, .8) 0 1px 7px 0px inset;
-  background-color: rgba(mix(#000, red, 60%), .3);
-  color: mix(#fff, red, 6%);
+    box-shadow: rgba(mix(#fff, red), .1) 0 1px 0, rgba(#000, .8) 0 1px 7px 0px inset;
+    background-color: rgba(mix(#000, red, 60%), .3);
+    color: mix(#fff, red, 6%);
 }

@@ -1,4 +1,4 @@
-import { Rgba } from '.'
+import { Rgba, Hsva } from '.'
 
 export type HslaColorArray = [number, number, number, number]
 
@@ -48,6 +48,18 @@ export class Hsla {
         const a = this.a
 
         return new Rgba(r, g, b, a)
+    }
+
+    get hsva(): Hsva {
+        const l = this.l / 100
+        const s = this.s / 100
+        const v = l + s * Math.min(l, 1 - l)
+        const newS = v === 0 ? 0 : 2 * (1 - l / v)
+        return new Hsva(this.h, newS * 100, v * 100, this.a)
+    }
+
+    get swiftColorString(): string {
+        return this.hsva.swiftColorString
     }
 
     static hueToRgb(p: number, q: number, t: number): number {

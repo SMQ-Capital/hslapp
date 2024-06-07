@@ -20,6 +20,7 @@ export default class TextInputController {
             setText('hex', color.hexString)
             setText('rgba', color.rgbaString)
             setText('hsla', color.hslaString)
+            setText('swiftui', color.swiftColorString)
             setText('h-text', color.h.toString())
             setText('s-text', color.s.toString())
             setText('l-text', color.l.toString())

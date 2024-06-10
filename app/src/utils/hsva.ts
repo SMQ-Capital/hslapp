@@ -18,7 +18,7 @@ export class Hsva {
         const bri = (this.v / 100).toFixed(2)
         const includeAlpha = this.a < 1
         const alphaPart = includeAlpha ? `, opacity: ${this.a.toFixed(2)}` : ''
-        return `Color(hue: ${hue}, saturation: ${sat}, brightness: ${bri}${alphaPart}))`
+        return `Color(hue: ${hue}, saturation: ${sat}, brightness: ${bri}${alphaPart})`
     }
 
     static fromString(value: string): Hsva | undefined {
